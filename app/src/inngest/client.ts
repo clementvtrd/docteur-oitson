@@ -1,6 +1,6 @@
 import { EventSchemas, Inngest } from 'inngest';
 
-import { Events } from '@/modules/common/inngest/types';
+import { Events } from '@/inngest/types';
 
 export const inngest = new Inngest({
   id: 'docteur-oitson',

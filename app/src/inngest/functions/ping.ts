@@ -1,6 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { AppService } from '@/app.service';
-import { inngest } from '@/modules/common/inngest/client';
+import { inngest } from '@/inngest/client';
 
 export const ping = (dependencies: {
   logger: Logger;
@@ -12,7 +12,7 @@ export const ping = (dependencies: {
     async ({ step }) => {
       await step.run('start async job', async () => {
         dependencies.logger.log('ping');
-        dependencies.appService.getHello();
+        dependencies.appService.ping();
       });
     },
   );

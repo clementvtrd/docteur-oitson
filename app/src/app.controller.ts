@@ -1,17 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
-import { inngest } from '@/modules/common/inngest/client';
+import { Controller, Get, Logger } from '@nestjs/common';
+import { inngest } from '@/inngest/client';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly logger: Logger) {}
 
   @Get()
   getHello(): string {
+    this.logger.log('send job/ping to inngest');
     inngest.send({
       name: 'job/ping',
       data: {},
     });
-    return this.appService.getHello();
+    return 'Hello World!';
   }
 }
