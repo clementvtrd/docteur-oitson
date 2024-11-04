@@ -4,8 +4,8 @@ import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
 import { AppService } from 'src/app.service';
 import { serve } from 'inngest/express';
-import { getInngestFunctions } from '@/modules/common/inngest/functions';
-import { inngest } from '@/modules/common/inngest/client';
+import { getInngestFunctions } from '@/inngest/functions';
+import { inngest } from '@/inngest/client';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {

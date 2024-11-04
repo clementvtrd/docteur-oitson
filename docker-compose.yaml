@@ -3,9 +3,8 @@ services:
     build:
       context: app
       target: development
-    environment:
-      - INNGEST_DEV=1
-      - INNGEST_BASE_URL=http://inngest:8288
+    env_file:
+      - .env
     ports:
       - '3000:3000'
     volumes:
